@@ -1,14 +1,19 @@
-import React, { useRef } from 'react';
-import { StyleSheet, SafeAreaView, Button } from 'react-native';
-import { SketchCanvas, SketchCanvasRef } from 'rn-perfect-sketch-canvas';
-
+import React, { useRef, useState } from 'react';
+import { View, SafeAreaView, Button } from 'react-native';
 
 //Components
-import Toolbar from './components/toolbar';
+import Toolbar from './components/Toolbar/toolbar';
+import Canvas from './components/Canvas/canvas';
+
+//Styles
+import styles from './AppStyles';
 
 
 export default function App() {
-  const canvasRef = useRef(SketchCanvasRef);
+  const canvasRef = useRef(null);
+  const [color, setColor] = useState('black');
+  const [sWidth, setWidth] = useState(8);
+
   const handleClick = () => {
     alert("Reset...");
     canvasRef.current.reset();
@@ -16,20 +21,12 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <SketchCanvas
-        ref={canvasRef}
-        strokeColor={'black'}
-        strokeWidth={8}
-        containerStyle={styles.container}
-      />
-      <Toolbar/>
-      <Button onPress={() => handleClick()} title="Reset" />
+      <Canvas color={color} sWidth={sWidth} ref={canvasRef} />
+
+      <View>
+        <Toolbar color={color} setColor={setColor} setWidth={setWidth} />
+        <Button style={styles.button} onPress={() => handleClick()} title="Reset" />
+      </View>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
