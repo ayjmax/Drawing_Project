@@ -6,7 +6,6 @@ import styles from "./toolbarStyles";
 
 //Icons
 const penIcon = require('../../assets/pencil.png');
-const blackLineIcon = require('../../assets/black-line.png');
 
 //Consider adding more colors
 const colors = ['darkturquoise', 'mediumvioletred', 'forestgreen', 'black'];

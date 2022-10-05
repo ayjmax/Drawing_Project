@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     paddingHorizontal: 5,
     paddingVertical: 20,
-    borderRadius: 20,
+    borderRadius: 10,
   },
   blackLineIcon: (width) => ({
     flex: 1,
