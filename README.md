@@ -1,4 +1,4 @@
-# Drawing_Project
+# drawing-project
 
 ## Requirements in node_modules
 ```
