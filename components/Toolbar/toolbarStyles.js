@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingHorizontal: 20,
   },
+  strokeWidthButton: {
+    backgroundColor: "#bababa",
+  },
   strokeWidthMenu: {
     flex: 1,
     flexDirection: 'column',
@@ -30,11 +33,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
     elevation: 5,
 
-    backgroundColor: "#d3d3d3",
-  },
-  strokeWidthButton: {
-    backgroundColor: "#d3d3d3",
-
+    backgroundColor: "#c6c6c6",
   },
   strokeWidthOption: {
     marginVertical: 20,
