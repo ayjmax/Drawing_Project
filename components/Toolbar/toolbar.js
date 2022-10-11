@@ -17,15 +17,22 @@ const strokeWidths = {'thin' : 5,
 function Toolbar(props) {
   const [penOpen, setPenButton] = useState(false);
 
+  //User selects color
   const pressColor = (color) => {
-    // alert(`${color}`);
     props.setColor(color);
   }
+
+  //User opens stroke width menu/options
   const pressPen = () => {
     setPenButton(!penOpen);
   }
-  const selectWidth = (width) => {
-    console.log(`Selected width: ${width}`);
+
+  //User selects certain stroke width
+  const selectWidth = (width, name) => {
+    console.log(`Selected width: ${name}`); //For debugging
+    if (props.sWidth === width) {
+      return;
+    }
     props.setWidth(width);
   }
 
@@ -38,31 +45,28 @@ function Toolbar(props) {
     <View style={styles.toolBarView}>
       <TouchableOpacity
         style={{...styles.touchOpacity, ...styles.strokeWidthButton}}
-        onPress={() => pressPen()}
+        onPress={pressPen}
       >
         <Image source={penIcon} style={styles.penIcon}></Image>
       </TouchableOpacity>
 
-      {penOpen ? (
+      {penOpen &&
         <View style={styles.strokeWidthMenu}>
-          {Object.keys(strokeWidths).map((width, index) => (
+          {Object.keys(strokeWidths).map((width) => (
             <TouchableHighlight
               activeOpacity={0.6}
               underlayColor="#c6c6c6"
-              onPress={() => selectWidth(strokeWidths[width])}  
+              onPress={() => selectWidth(strokeWidths[width], width)}  
               key={width}
               style={styles.strokeWidthOption}
             >
-              <View style={styles.blackLineIcon(strokeWidths[width])}>
-                <Text>bruuuh</Text>
-              </View>
+              <View
+                style={styles.blackLineIcon(strokeWidths[width])}
+              ></View>
             </TouchableHighlight>
           ))}
-
         </View>
-      ) : (
-        <></>
-      )}
+      }
 
 
       {colors.map((color) => (
@@ -80,11 +84,3 @@ function Toolbar(props) {
 
 //Exports
 export default Toolbar;
-
-
-
-                {/* <Image
-                  source={blackLineIcon}
-                  style={styles.blackLineIcon(strokeWidths[width])}
-                  resizeMode="stretch"
-                ></Image> */}
