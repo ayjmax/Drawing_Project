@@ -21,10 +21,7 @@ export default function App() {
 
   const handleSave = () => {
     alert("Saved!");
-    console.log('hello');
     imageData = canvasRef.current.toImage().encodeToBase64();
-    console.log(typeof(imageData));
-    // saveImage(image, example);
     saveImage("bruh", imageData);
   }
 
