@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { View, SafeAreaView, Button } from 'react-native';
+import { SafeAreaView, Button } from 'react-native';
 
 //Components
 import Header from './components/Header/header';

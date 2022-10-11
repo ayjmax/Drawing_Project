@@ -1,4 +1,4 @@
-import React, { useRef, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { View } from 'react-native';
 import { SketchCanvas } from 'rn-perfect-sketch-canvas';
 

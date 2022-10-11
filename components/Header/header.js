@@ -1,4 +1,4 @@
-import React, { useState, useEffect, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { View, Text, TouchableOpacity, TouchableHighlight, Image, Button } from "react-native";
 
 //Styling
@@ -26,9 +26,6 @@ function Header(props, ref) {
 
   return (
     <View style={styles.headerView}>
-      {/* <Button style={styles.button} onPress={handleUndo} title="Undo" />
-      <Button style={styles.button} onPress={handleRedo} title="Redo" /> */}
-
       <TouchableOpacity
         activeOpacity={0.6}
         onPress={handleUndo}
