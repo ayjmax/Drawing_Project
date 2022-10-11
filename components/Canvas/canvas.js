@@ -10,7 +10,7 @@ function Canvas(props, ref) {
     <View style={styles.canvasView}>
       <SketchCanvas
         ref={ref}
-        strokeColor={`${props.color}`}
+        strokeColor={props.color}
         strokeWidth={props.sWidth}
         containerStyle={styles.canvas}
       />
