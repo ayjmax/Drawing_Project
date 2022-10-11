@@ -18,4 +18,4 @@ async function saveImage (fileName, imageData) {
   });
 }
 
-export default testSaveImage;
+export default saveImage;
